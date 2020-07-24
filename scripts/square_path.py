@@ -9,7 +9,8 @@ from geometry_msgs.msg import TwistStamped
 latitude =0.0
 longitude=0.0
 
-
+# ATTENTION!!
+# Guided mode ==> Arm ==> Takeoff
 def Takeoff():
     rospy.wait_for_service('/mavros/set_mode')
     try:
