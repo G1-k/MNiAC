@@ -12,10 +12,10 @@
 
 Move in square path with user defined dimension by publishing twist msgs to /cmd_vel topic of mavros.
 
-#### Subscribers : 
+#### Subscribed To : 
 * /mavros/global_position/raw/fix
 
-#### Publishers :
+#### Published To :
 * /mavros/setpoint_velocity/cmd_vel
 
 #### Services :
