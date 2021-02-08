@@ -18,7 +18,7 @@
 
 ## PX4 SITL - Setup
 
-## 1.Prerequisite
+## 1.Pre-requisite
 
 #### Install Dependencies
 ```
@@ -96,13 +96,14 @@ catkin build
 Move in square path of user defined dimension by publishing Pose msgs to  'mavros/setpoint_position/local' topic of mavros.
 
 1. Launch PX4 SITL along with Gazebo and MAVROS
-` roslaunch px4 mavros_posix_sitl.launch`
+``` roslaunch px4 mavros_posix_sitl.launch```
 
 2. Run the position_control node
-` rosrun px4_examples node_position_control.py`
+``` rosrun px4_examples node_position_control.py```
 
 ### 3.2 Node Velocity Control
- 
+
+
 
 
 ## 4. Info
