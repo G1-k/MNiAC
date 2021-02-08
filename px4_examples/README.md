@@ -33,12 +33,13 @@ pip3 install --user numpy
 pip install pymavlink
 ```
 #### Create a ROS Workspace
-1. ```
+1. Create
+```
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws
 catkin init
 ```
-2. Add in .bashrc
+2. Add source in .bashrc
 ``` source ~/catkin_ws/devel/setup.bash```
 
 #### Install MAVLink, Mavros (Other ROS Dependencies)
