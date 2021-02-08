@@ -32,7 +32,7 @@ pip3 install --user packaging
 pip3 install --user numpy
 pip install pymavlink
 ```
-#### Create a ROS Workspace
+#### 1.1 Create a ROS Workspace
 1. Create
 ```
 mkdir -p ~/catkin_ws/src
@@ -42,7 +42,7 @@ catkin init
 2. Add source in .bashrc
 ``` source ~/catkin_ws/devel/setup.bash```
 
-#### Install MAVLink, Mavros (Other ROS Dependencies)
+#### 1.2 Install MAVLink, Mavros (Other ROS Dependencies)
 
 Before this, make sure `~/catkin_ws/` is present
 
@@ -81,8 +81,8 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/PX4-Autopilot/Tools/sitl_gazebo
 
 2. Clone the repository
 
-- `cd catkin_ws/src`
-- `git clone https://github.com/G1-k/LaMB.git`
+- `cd ~/catkin_ws/src`
+- `https://github.com/G1-k/MNiAC.git`
 
 3. Build the workspace
 ```
@@ -90,7 +90,7 @@ cd ..
 catkin build
 ```
 
-### Node Position Control
+### 3.1 Node Position Control
 
 Move in square path of user defined dimension by publishing Pose msgs to  'mavros/setpoint_position/local' topic of mavros.
 
@@ -100,19 +100,19 @@ Move in square path of user defined dimension by publishing Pose msgs to  'mavro
 2. Run the position_control node
 ` rosrun px4_examples node_position_control.py`
 
-### Node Velocity Control
+### 3.2 Node Velocity Control
  
 
 
 ## 4. Info
-#### Published To :
-1. Position Control
+#### Published To Topics:
+#### 1.Position Control
 * mavros/setpoint_position/local
 
-2. Velocity Control
+#### 2.Velocity Control
 * mavros/setpoint_velocity/cmd_vel
 
-3. Acceleration Control
+#### 3.Acceleration Control
 * mavros/setpoint_acceleration/accel
 
 ##### Services Used:
