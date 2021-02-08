@@ -17,9 +17,9 @@
 
 ## PX4 SITL - Setup
 
-### Prerequisite
+## 1.Prerequisite
 
-#### Dependencies
+#### Install Dependencies
 ```
 sudo apt-get install ros-melodic-geographic-msgs
 sudo apt-get install libgeographic-dev 
@@ -32,36 +32,64 @@ pip3 install --user packaging
 pip3 install --user numpy
 pip install pymavlink
 ```
-#### MAVLink, Mavros (Other ROS Dependencies)
+#### Create a ROS Workspace
+1. ```
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws
+catkin init
+```
+2. Add in .bashrc
+``` source ~/catkin_ws/devel/setup.bash```
+
+#### Install MAVLink, Mavros (Other ROS Dependencies)
 
 Before this, make sure `~/catkin_ws/` is present
 
 1. Go to folder where ubuntu_sim_ros_melodic.sh is present
-`bash ubuntu_sim_ros_melodic.sh`
+```
+bash ubuntu_sim_ros_melodic.sh
+```
 
 NOTE: ubuntu_sim_ros_melodic.sh present in this repo doesnt install ros-melodic,gazebo etc. It only install mavlink,mavros and its dependencies
 
-### SITL Setup 
+## 2.SITL Setup 
 
 1. Clone PX4 repo
-`git clone https://github.com/PX4/PX4-Autopilot.git --recursive`
+```
+git clone https://github.com/PX4/PX4-Autopilot.git --recursive
+```
 
-2. cd to PX4 Repo, then
+2. cd to PX4 Repo, then Build 
 
-`make px4_sitl gazebo`
+```
+make px4_sitl gazebo
+```
 
 3. Source your workspace and add gazebo path
-
-`gedit ~/.bashrc`
-
-In .bashrc add below lines
+* ```gedit ~/.bashrc```
+* In .bashrc, Add below lines and save it
 ```
 source ~/PX4-Autopilot/Tools/setup_gazebo.bash $(pwd)/PX4-Autopilot $(pwd)/PX4-Autopilot/build/px4_sitl_default
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/PX4-Autopilot
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/PX4-Autopilot/Tools/sitl_gazebo
 ```
 
-## Node Position Control
+## 3. Getting Started
+
+1. Give a star to this repo (at the top) 
+
+2. Clone the repository
+
+- `cd catkin_ws/src`
+- `git clone https://github.com/G1-k/LaMB.git`
+
+3. Build the workspace
+```
+cd ..
+catkin build
+```
+
+### Node Position Control
 
 Move in square path of user defined dimension by publishing Pose msgs to  'mavros/setpoint_position/local' topic of mavros.
 
@@ -71,12 +99,12 @@ Move in square path of user defined dimension by publishing Pose msgs to  'mavro
 2. Run the position_control node
 ` rosrun px4_examples node_position_control.py`
 
-## Node Velocity Control
+### Node Velocity Control
  
 
 
-
-### Published To :
+## 4. Info
+#### Published To :
 1. Position Control
 * mavros/setpoint_position/local
 
@@ -86,7 +114,7 @@ Move in square path of user defined dimension by publishing Pose msgs to  'mavro
 3. Acceleration Control
 * mavros/setpoint_acceleration/accel
 
-#### Services Used:
+##### Services Used:
 * /mavros/set_mode
 * /mavros/cmd/arming
 * /mavros/cmd/takeoff
