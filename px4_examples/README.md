@@ -1,11 +1,12 @@
 # Project MNiAC
 
-#### Firmware (tested) - PX4 
-#### Python version - 2.xx
-#### ROS version (tested) - Melodic
-#### Mavros, Mavlink package - Latest
+### Platform:
+##### - Firmware (tested) - PX4 
+##### - Python version - 2.xx
+##### - ROS version (tested) - Melodic
+##### - Mavros, Mavlink package - Latest
 
-### PX4 Dev Setup and Starting Guide (stepwise)
+#### (DOCS)PX4 Dev Setup and Starting Guide (stepwise)
 1. https://docs.px4.io/master/en/dev_setup/dev_env_linux_ubuntu.html#rosgazebo
 2. https://docs.px4.io/master/en/ros/mavros_installation.html
 3. https://docs.px4.io/master/en/dev_setup/building_px4.html
