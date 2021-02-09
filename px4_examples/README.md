@@ -1,5 +1,7 @@
 # Project MNiAC
 
+## Mulicopter Navigation wIth Autonomous Control
+
 ### Platform:
 ##### - Firmware (tested) - PX4 
 ##### - Python version - 2.xx
@@ -67,6 +69,7 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/PX4-Autopilot
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/PX4-Autopilot/Tools/sitl_gazebo
 ```
 
+
 ## 3. Getting Started
 
 1. Give a star to this repo (at the top) 
@@ -82,7 +85,7 @@ cd ..
 catkin build
 ```
 
-#### 3.1 Node Position Control
+### 3.1 Node Position Control
 
 - Move in square path of user defined dimension by publishing Pose msgs to  'mavros/setpoint_position/local' topic of mavros.
 
@@ -96,7 +99,7 @@ roslaunch px4 mavros_posix_sitl.launch
 rosrun px4_examples node_position_control.py
 ```
 
-#### 3.2 Node Velocity Control
+### 3.2 Node Velocity Control
 
 - Move in circular path of user defined dimension by publishing TwistStamped msgs to  'mavros/setpoint_velocity/cmd_vel' topic of mavros.
 
