@@ -94,7 +94,13 @@ Move in square path of user defined dimension by publishing Pose msgs to  'mavro
 
 ### 3.2 Node Velocity Control
 
+Move in circular path of user defined dimension by publishing TwistStamped msgs to  'mavros/setpoint_velocity/cmd_vel' topic of mavros.
 
+1. Launch PX4 SITL along with Gazebo and MAVROS
+``` roslaunch px4 mavros_posix_sitl.launch```
+
+2. Run the velocity_control node
+``` rosrun px4_examples node_velocity_control.py```
 
 
 ## 4. Info
