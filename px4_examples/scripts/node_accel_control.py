@@ -3,7 +3,8 @@
 import rospy
 
 # 3D point & Stamped Pose msgs
-from geometry_msgs.msg import Point, PoseStamped, TwistStamped
+from geometry_msgs.msg import Point, PoseStamped, TwistStamped, Vector3Stamped
+
 # import all mavros messages and services
 from mavros_msgs.msg import *
 from mavros_msgs.srv import *
@@ -101,14 +102,11 @@ class Controller:
     def __init__(self):
         # Drone state
         self.state = State()
-        self.vel = TwistStamped()
+        self.accel = Vector3Stamped()
 
-        self.vel.twist.linear.y = 0
-        self.vel.twist.linear.z = 0
-        self.vel.twist.linear.x = 0
-        self.vel.twist.angular.z = 0
-        self.vel.twist.angular.x = 0
-        self.vel.twist.angular.y = 0
+        self.accel.vector.x = 0
+        self.accel.vector.y = 0
+        self.accel.vector.z = 0
         # Instantiate a setpoints message
         self.sp = PositionTarget()
         # # set the flag to use position setpoints and yaw angle
@@ -194,8 +192,8 @@ def main():
     # Setpoint publisher    
     sp_pub = rospy.Publisher('mavros/setpoint_raw/local', PositionTarget, queue_size=1)
 
-    vel_pub = rospy.Publisher(
-            '/mavros/setpoint_velocity/cmd_vel', TwistStamped, queue_size=1)
+    accel_pub = rospy.Publisher(
+            '/mavros/setpoint_accel/accel', Vector3Stamped, queue_size=1)
 
     modes.change_mav_frame()
 
@@ -222,7 +220,7 @@ def main():
     k=0
     while k<10:
         #sp_pub.publish(cnt.sp)
-        vel_pub.publish(cnt.vel)
+        accel_pub.publish(cnt.accel)
         rate.sleep()
         k = k + 1
     
@@ -232,18 +230,20 @@ def main():
             modes.setOffboardMode()
             break
 
-
+    kp = 0.5
+    goal_x = 8
     # ROS main loop
-    while not rospy.is_shutdown():
+    while not rospy.is_shutdown() :
         #cnt.updateSp()
-        #sp_pub.publish(cnt.sp)
-
-        speed = 4
-        radius = 2
-        cnt.vel.twist.linear.x = speed
-        cnt.vel.twist.angular.z = - speed/radius
-        vel_pub.publish(cnt.vel)
+        #sp_pub.publish(cnt.sp
+        e = goal_x - cnt.local_pos.x
+        accel_val = kp*e
+        cnt.accel.vector.x = accel_val
+        accel_pub.publish(cnt.accel)
         rate.sleep()
+        if e<=0:
+            cnt.accel.vector.x = 0
+            break
 
 if __name__ == '__main__':
     try:

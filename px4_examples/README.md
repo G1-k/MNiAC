@@ -1,7 +1,5 @@
 # Project MNiAC
 
-## Mulicopter Navigation wIth Autonomous Control
-
 ### Platform:
 ##### - Firmware (tested) - PX4 
 ##### - Python version - 2.xx
@@ -14,7 +12,7 @@
 ## 1.Pre-requisite
 
 #### Install Dependencies
-```sh
+```
 sudo apt-get install ros-melodic-geographic-msgs
 sudo apt-get install libgeographic-dev 
 sudo apt-get install libprotobuf-dev libprotoc-dev protobuf-compiler libeigen3-dev libxml2-utils python-rospkg python-jinja2
@@ -28,7 +26,7 @@ pip install pymavlink
 ```
 #### 1.1 Create a ROS Workspace
 1. Create
-```sh
+```
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws
 catkin init
@@ -41,7 +39,7 @@ catkin init
 Before this, make sure `~/catkin_ws/` is present
 
 1. Go to folder where ubuntu_sim_ros_melodic.sh is present
-```sh
+```
 bash ubuntu_sim_ros_melodic.sh
 ```
 
@@ -50,25 +48,24 @@ NOTE: ubuntu_sim_ros_melodic.sh present in this repo doesnt install ros-melodic,
 ## 2.SITL Setup 
 
 1. Clone PX4 repo
-```sh
+```
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 ```
 
 2. cd to PX4 Repo, then Build 
 
-```sh
+```
 make px4_sitl gazebo
 ```
 
 3. Source your workspace and add gazebo path
 * ```gedit ~/.bashrc```
 * In .bashrc, Add below lines and save it
-```sh
+```
 source ~/PX4-Autopilot/Tools/setup_gazebo.bash $(pwd)/PX4-Autopilot $(pwd)/PX4-Autopilot/build/px4_sitl_default
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/PX4-Autopilot
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/PX4-Autopilot/Tools/sitl_gazebo
 ```
-
 
 ## 3. Getting Started
 
@@ -80,38 +77,24 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/PX4-Autopilot/Tools/sitl_gazebo
 - `https://github.com/G1-k/MNiAC.git`
 
 3. Build the workspace
-```sh
+```
 cd ..
 catkin build
 ```
 
 ### 3.1 Node Position Control
 
-- Move in square path of user defined dimension by publishing Pose msgs to  'mavros/setpoint_position/local' topic of mavros.
+Move in square path of user defined dimension by publishing Pose msgs to  'mavros/setpoint_position/local' topic of mavros.
 
 1. Launch PX4 SITL along with Gazebo and MAVROS
-``` sh
-roslaunch px4 mavros_posix_sitl.launch
-```
+``` roslaunch px4 mavros_posix_sitl.launch```
 
 2. Run the position_control node
-``` sh
-rosrun px4_examples node_position_control.py
-```
+``` rosrun px4_examples node_position_control.py```
 
 ### 3.2 Node Velocity Control
 
-- Move in circular path of user defined dimension by publishing TwistStamped msgs to  'mavros/setpoint_velocity/cmd_vel' topic of mavros.
 
-1. Launch PX4 SITL along with Gazebo and MAVROS
-``` sh
-roslaunch px4 mavros_posix_sitl.launch
-```
-
-2. Run the velocity_control node
-```sh
-rosrun px4_examples node_velocity_control.py
-```
 
 
 ## 4. Info
