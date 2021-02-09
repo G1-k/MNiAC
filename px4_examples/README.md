@@ -6,15 +6,6 @@
 ##### - ROS version (tested) - Melodic
 ##### - Mavros, Mavlink package - Latest
 
-#### (DOCS)PX4 Dev Setup and Starting Guide (stepwise)
-1. https://docs.px4.io/master/en/dev_setup/dev_env_linux_ubuntu.html#rosgazebo
-2. https://docs.px4.io/master/en/ros/mavros_installation.html
-3. https://docs.px4.io/master/en/dev_setup/building_px4.html
-4. https://docs.px4.io/master/en/simulation/gazebo.html
-5. https://docs.px4.io/master/en/simulation/ros_interface.html
-6. https://docs.px4.io/master/en/ros/offboard_control.html
-7. https://docs.px4.io/master/en/ros/mavros_offboard.html
-
 
 ## PX4 SITL - Setup
 
@@ -123,3 +114,15 @@ Move in square path of user defined dimension by publishing Pose msgs to  'mavro
 * /mavros/cmd/takeoff
 * /mavros/cmd/land
 
+#### (DOCS)PX4 Dev Setup and Starting Guide (stepwise)
+1. https://docs.px4.io/master/en/dev_setup/dev_env_linux_ubuntu.html#rosgazebo
+2. https://docs.px4.io/master/en/ros/mavros_installation.html
+3. https://docs.px4.io/master/en/dev_setup/building_px4.html
+4. https://docs.px4.io/master/en/simulation/gazebo.html
+5. https://docs.px4.io/master/en/simulation/ros_interface.html
+6. https://docs.px4.io/master/en/ros/offboard_control.html
+7. https://docs.px4.io/master/en/ros/mavros_offboard.html
+
+#### USEFUL LINKS:
+1. Python examples
+https://github.com/PX4/PX4-Autopilot/tree/master/integrationtests/python_src/px4_it/mavros
