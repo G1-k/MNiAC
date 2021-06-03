@@ -5,7 +5,7 @@
 
 
 <div align="center">
-<img src="resource/ground.jpg" alt="drawing" height="690px" width="620px"/>
+<img src="resource/ground.jpg" alt="drawing" height="400px" width="400px"/>
 </div>
 
 ## PACKAGES :
