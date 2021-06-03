@@ -2,7 +2,7 @@
  
 ## Multicopter Navigation wIth Autonomous Control
 
-<img src="resource/ground.jpg" alt="drawing" width="200"/>
+<img src="resource/ground.jpg" alt="drawing" align="right" height="270px" width="450px"/>
 
 ## PACKAGES :
 
