@@ -1,13 +1,8 @@
-[//]: # (Image References)
-
-[image1]: ./resource/ground.jpg "Ground Pic"
-
-
 # Project MNiAC
  
 ## Multicopter Navigation wIth Autonomous Control
 
-![alt_text][image1]
+<img src="resource/ground.jpg" alt="drawing" width="200"/>
 
 ## PACKAGES :
 
