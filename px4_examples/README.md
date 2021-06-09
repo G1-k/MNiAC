@@ -154,4 +154,5 @@ rosrun px4_examples node_accel_control.py
 
 #### USEFUL LINKS:
 1. [Python examples](https://github.com/PX4/PX4-Autopilot/tree/master/integrationtests/python_src/px4_it/mavros)
-2. [Prometheus Guide](https://github.com/amov-lab/Prometheus/blob/master/README_EN.md)
+2. [Prometheus Guide - Chinese](https://github.com/amov-lab/Prometheus/blob/master/README_EN.md)
+3. [CTS - ROS Aerial Guide](https://ctu-mrs.github.io/)
