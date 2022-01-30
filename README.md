@@ -4,7 +4,7 @@
 
 ![Mniac-gif](resource/MNiAC_Gif.gif)
 
-#### Full Video [Here](https://www.youtube.com/watch?v=Ntq0ik9OZB4)
+#### To Watch Full Video, [Click Here](https://www.youtube.com/watch?v=Ntq0ik9OZB4)
 
 ## PACKAGES :
 
