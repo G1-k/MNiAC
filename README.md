@@ -2,7 +2,7 @@
  
 ## Multicopter Navigation wIth Autonomous Control
 
-![Mniac-gif](Resource/MNiAC_Gif.gif)
+![Mniac-gif](resource/MNiAC_Gif.gif)
 
 ## PACKAGES :
 
