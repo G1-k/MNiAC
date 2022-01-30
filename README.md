@@ -2,6 +2,8 @@
  
 ## Multicopter Navigation wIth Autonomous Control
 
+![Mniac-gif](Resource/MNiAC_Gif.gif)
+
 ## PACKAGES :
 
 ### 1. px4_examples - PX4 SITL
